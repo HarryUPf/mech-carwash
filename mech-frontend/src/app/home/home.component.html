@@ -1,0 +1,20 @@
+<div *ngIf="info.token; else loggedOut">
+  <!--
+  <h5 class="text-primary">Your Information</h5>
+  <p>
+    <strong>Username:</strong> {{info.username}}<br/>
+    <strong>Roles:</strong> {{info.authorities}}<br />
+    <strong>Token:</strong> {{info.token}}.
+  </p>
+  -->
+</div>
+
+<div class="jumbotron" style="background: url(./assets/workshop.png)">
+  <h1 class="display" style="font-weight:bold;">Welcome {{info.username}} to MECH-X4</h1>
+  <p class="lead" style="color: blue; font-weight:bold;">Do you need your car on the best possible condition? PAINT, REPAIR and ENHANCE your car with us. We have the best mechanics and tools for the job.</p>
+  <hr class="my">
+  <p style="font-weight:bold;">We are open on weekdays from 9:00 to 18:00 and on weekends from 9:00 to 13:00.</p>
+</div>
+<ng-template #loggedOut>
+  Please login.
+</ng-template>

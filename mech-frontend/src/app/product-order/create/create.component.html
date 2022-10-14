@@ -1,0 +1,36 @@
+<div class="card">
+    <div class="card-header">
+        <h3>ORDER CREATE</h3>
+    </div>
+    <div class="card-body">
+        <label>CAR SELECT: </label>
+        <select class="form-control"
+        [(ngModel)]="object.car">
+            <option *ngFor="let car of cars" [ngValue]="car">{{car.brand}} - {{car.model}} - [{{car.plate}}]</option>
+        </select>
+        <label>CLIENT SELECT: </label>
+        <select class="form-control"
+        [(ngModel)]="object.client">
+            <option *ngFor="let client of clients" [ngValue]="client">{{client.surname}}, {{client.name}}</option>
+        </select>
+        <label>EMPLOYEE SELECT: </label>
+        <select class="form-control"
+        [(ngModel)]="object.employee">
+            <option *ngFor="let employee of employees" [ngValue]="employee">{{employee.surname}}, {{employee.name}}</option>
+        </select>
+        <label>PRODUCT SELECT</label>
+        <select class="form-control"
+        [(ngModel)]="object.product">
+            <option *ngFor="let product of products" [ngValue]="product">{{product.name}} ${{product.price}}</option>
+        </select>
+        <label>DATETIME: </label>
+        <input class="form-control" name="datetime" type="datetime-local"
+        [(ngModel)]="object.date">
+        <label>DESCRIPTION:</label>
+        <textarea class="form-control" rows="3"
+        [(ngModel)]="object.description"></textarea>
+        <br>
+        <button (click)="Create()" class="btn btn-success btn-block" style="margin-top: 16px;"><i class="fa fa-plus-circle"></i> CREATE</button>
+        <button (click)="goRead()" class="btn btn-warning btn-block"><i class="fa fa-undo"></i> GO BACK</button>
+    </div>
+</div>

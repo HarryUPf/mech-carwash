@@ -1,0 +1,31 @@
+<div class="card">
+    <div class="card-header">
+        <h3>PRODUCT LIST</h3>
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>INDEX</th>
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th>PRICE</th>
+                    <th>ACTIONS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let object of objects; let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{object.id}}</td>
+                    <td>{{object.name}}</td>
+                    <td>{{object.price}}</td>
+                    <td>
+                        <button (click)="goUpdate(object)" class="btn btn-info"><i class="fa fa-edit"></i> UPDATE</button>
+                        <button (click)="Delete(object)" class="btn btn-dark" style="margin-left: 16px;"><i class="fa fa-trash"></i> DELETE</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <button (click)="goCreate()" class="btn btn-success btn-block"><i class="fa fa-plus-circle"></i> CREATE</button>
+    </div>
+</div>
